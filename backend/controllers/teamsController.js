@@ -51,7 +51,10 @@ export const createTeam = async (req, res) => {
 export const updateTeam = async (req, res) => {
     let db = getDB();
     const { teamId } = req.params;
-    await db.collection("teams").updateOne();
+    await db.collection("teams").updateOne(
+     { _id: new ObjectId(teamId) },
+     { $set: updateData }
+    );
     res.json({ message: "Team updated successfully" });
 }
 
