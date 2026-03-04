@@ -97,3 +97,4 @@ export const deleteGame = async (req, res) => {
         console.log(err);
     }
 }
+//No error handling unlike gamescontroller.js
